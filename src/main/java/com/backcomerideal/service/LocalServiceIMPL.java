@@ -13,28 +13,30 @@ public class LocalServiceIMPL implements LocalService{
 @Autowired
 public LocalRepository local;
     @Override
-    public List<Local> getLocalesByDistrictId(String districtId) {
+    public List<Local> getLocalesByDistrict(String district) {
         //Mostrar locales filtrado por distrito
-        List<Local> localesDistrtrito = local.findAll()
+        return local.findAll()
                 .stream().
-                filter(local -> local.getDistrictId() == Integer.parseInt(districtId))
+                filter(local1 -> local1.getDistrict().equalsIgnoreCase(district))
                 .toList();
-        return localesDistrtrito;
     }
 
     @Override
     public List<Local> getAllLocales() {
-        System.out.println("localserviceIMPL");
         return local.findAll();
     }
 
     @Override
     public Local getLocalById(String id) {
-        return null;
+        return local.findById(id).orElse(null);
     }
 
     @Override
     public List<Local> getLocalesByActivityType(String activityType) {
-        return null;
+
+        return local.findAll()
+                .stream().
+                        filter(local1 -> local1.getActivityType().equalsIgnoreCase(activityType))
+                .toList();
     }
 }

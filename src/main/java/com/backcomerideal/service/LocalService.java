@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface LocalService {
 
-    List<Local> getLocalesByDistrictId(String districtId);
+    List<Local> getLocalesByDistrict(String districtId);
 
     List<Local> getAllLocales();
 
