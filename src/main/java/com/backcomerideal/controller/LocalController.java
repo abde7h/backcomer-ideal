@@ -1,5 +1,7 @@
 package com.backcomerideal.controller;
 
+import com.backcomerideal.model.Local;
+import com.backcomerideal.service.LocalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,7 @@ public class LocalController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Local> getLocalById(@PathVariable("id") int id) {
+    public ResponseEntity<Local> getLocalById(@PathVariable("id") String id) {
         Local local = localService.getLocalById(id);
         if (local != null) {
             return new ResponseEntity<>(local, HttpStatus.OK);
@@ -41,7 +43,7 @@ public class LocalController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Local> updateLocal(@PathVariable("id") int id, @RequestBody Local local) {
+    public ResponseEntity<Local> updateLocal(@PathVariable("id") String id, @RequestBody Local local) {
         Local updatedLocal = localService.updateLocal(id, local);
         if (updatedLocal != null) {
             return new ResponseEntity<>(updatedLocal, HttpStatus.OK);
@@ -51,7 +53,7 @@ public class LocalController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteLocal(@PathVariable("id") int id) {
+    public ResponseEntity<Void> deleteLocal(@PathVariable("id") String id) {
         boolean deleted = localService.deleteLocal(id);
         if (deleted) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
