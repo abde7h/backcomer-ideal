@@ -4,8 +4,14 @@ import com.backcomerideal.model.Local;
 
 import java.util.List;
 
-public interface LocalService {
-    public List<Local> getLocalesPorDistrito( String districtId);
-    public List<Local> getLocalesPorTipo(String activityType);
 
+public interface LocalService {
+
+    List<Local> getLocalesByDistrictId(String districtId);
+
+    List<Local> getAllLocales();
+
+    Local getLocalById(String id);
+
+    List<Local> getLocalesByActivityType(String activityType);
 }

@@ -28,7 +28,7 @@ public class LocalController {
     }
 
     @GetMapping("/distrito/{id}")
-    public ResponseEntity<List<Local>> getLocalesByDistrictId(@PathVariable("id") int districtId) {
+    public ResponseEntity<List<Local>> getLocalesByDistrictId(@PathVariable("id") String districtId) {
         List<Local> locales = localService.getLocalesByDistrictId(districtId);
         if (!locales.isEmpty()) {
             return new ResponseEntity<>(locales, HttpStatus.OK);
@@ -37,7 +37,7 @@ public class LocalController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/local/{id}")
     public ResponseEntity<Local> getLocalById(@PathVariable("id") String id) {
         Local local = localService.getLocalById(id);
         if (local != null) {
@@ -47,29 +47,4 @@ public class LocalController {
         }
     }
 
-    @PostMapping
-    public ResponseEntity<Local> addLocal(@RequestBody Local local) {
-        Local createdLocal = localService.addLocal(local);
-        return new ResponseEntity<>(createdLocal, HttpStatus.CREATED);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Local> updateLocal(@PathVariable("id") String id, @RequestBody Local local) {
-        Local updatedLocal = localService.updateLocal(id, local);
-        if (updatedLocal != null) {
-            return new ResponseEntity<>(updatedLocal, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteLocal(@PathVariable("id") String id) {
-        boolean deleted = localService.deleteLocal(id);
-        if (deleted) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
 }
