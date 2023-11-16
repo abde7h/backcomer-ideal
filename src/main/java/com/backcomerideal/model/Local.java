@@ -8,7 +8,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+<<<<<<< HEAD
 @Table(name = "locales_comerciales")
+=======
+@Table(name="locales_comerciales")
+>>>>>>> c4b33d42a882e6487478219e1e6bf63c75f284dc
 public class Local {
     @Id
     @Column(name="localId")
@@ -23,7 +27,11 @@ public class Local {
     @Column(name="districtId")
     @JsonProperty("districtId")
     private int districtId;
+<<<<<<< HEAD
     @Column(name="distric")
+=======
+    @Column(name="district")
+>>>>>>> c4b33d42a882e6487478219e1e6bf63c75f284dc
     @JsonProperty("district")
     private String district;
     @Column(name="isAvailability")
@@ -47,6 +55,9 @@ public class Local {
     @Column(name="salePrice")
     @JsonProperty("salePrice")
     private float salePrice;
+    @Column(name="isGolden")
+    @JsonProperty("isGolden")
+    private boolean isGolden;
 
     // Constructor vacío (necesario para JPA)
     public Local() {

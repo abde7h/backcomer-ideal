@@ -15,11 +15,16 @@ public LocalRepository local;
     @Override
     public List<Local> getLocalesByDistrictId(String districtId) {
         //Mostrar locales filtrado por distrito
-        return null;
+        List<Local> localesDistrtrito = local.findAll()
+                .stream().
+                filter(local -> local.getDistrictId() == Integer.parseInt(districtId))
+                .toList();
+        return localesDistrtrito;
     }
 
     @Override
     public List<Local> getAllLocales() {
+        System.out.println("localserviceIMPL");
         return local.findAll();
     }
 
