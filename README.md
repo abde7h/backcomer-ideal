@@ -4,14 +4,12 @@ Este repositorio contiene el código fuente de la aplicación BackComerIdeal. Se
 
 ## Tecnologías Utilizadas
 
-- Java
-- Spring Boot
-- Hibernate
-- MySQL
+- 🚀 Java
+- 🌐 Spring Boot
+- 🗄️ Hibernate
+- 🛢️ MySQL
 
 ## Estructura del Proyecto
-
-El proyecto está organizado de la siguiente manera:
 
 - **src/main/java/com/backcomerideal**: Contiene el código fuente de la aplicación.
   - **model**: Clases de modelo que representan entidades como `Local`.
