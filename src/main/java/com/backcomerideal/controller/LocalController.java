@@ -20,10 +20,21 @@ public class LocalController {
         this.localService = localService;
     }
 
+
     @GetMapping
     public ResponseEntity<List<Local>> getAllLocales() {
         List<Local> locales = localService.getAllLocales();
         return new ResponseEntity<>(locales, HttpStatus.OK);
+    }
+
+    @GetMapping("/distrito/{id}")
+    public ResponseEntity<List<Local>> getLocalesByDistrictId(@PathVariable("id") int districtId) {
+        List<Local> locales = localService.getLocalesByDistrictId(districtId);
+        if (!locales.isEmpty()) {
+            return new ResponseEntity<>(locales, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping("/{id}")
