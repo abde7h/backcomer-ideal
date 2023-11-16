@@ -1,4 +1,4 @@
-package com.backcomerideal.backcomerideal;
+package com.backcomerideal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
