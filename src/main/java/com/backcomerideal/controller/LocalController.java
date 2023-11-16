@@ -13,12 +13,10 @@ import java.util.List;
 @RequestMapping("/locales")
 public class LocalController {
 
-    private final LocalService localService;
+
 
     @Autowired
-    public LocalController(LocalService localService) {
-        this.localService = localService;
-    }
+    private LocalService localService;
 
 
     @GetMapping

@@ -1,25 +1,36 @@
 package com.backcomerideal.model;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Local {
     @Id
+    @Column(name="localId")
     private String localId;
+    @Column(name="localName")
     private String localName;
+    @Column(name="address")
     private String address;
+    @Column(name="districtId")
     private int districtId;
+    @Column(name="distric")
     private String district;
+    @Column(name="isAvailability")
     private boolean isAvailability;
+    @Column(name="activityType")
     private String activityType;
+    @Column(name="totalDistrictStore")
     private int totalDistrictStore;
+    @Column(name="longitude")
     private float longitude;
+    @Column(name="latitude")
     private float latitude;
+    @Column(name="rentalPrice")
     private float rentalPrice;
+    @Column(name="salePrice")
     private float salePrice;
 
     // Constructor vacío (necesario para JPA)
