@@ -1,37 +1,55 @@
 package com.backcomerideal.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="locales_comerciales")
 public class Local {
     @Id
     @Column(name="localId")
+    @JsonProperty("localId")
     private String localId;
     @Column(name="localName")
+    @JsonProperty("localName")
     private String localName;
     @Column(name="address")
+    @JsonProperty("address")
     private String address;
     @Column(name="districtId")
+    @JsonProperty("districtId")
     private int districtId;
-    @Column(name="distric")
+    @Column(name="district")
+    @JsonProperty("district")
     private String district;
     @Column(name="isAvailability")
+    @JsonProperty("isAvailability")
     private boolean isAvailability;
     @Column(name="activityType")
+    @JsonProperty("activityType")
     private String activityType;
     @Column(name="totalDistrictStore")
+    @JsonProperty("totalDistrictStore")
     private int totalDistrictStore;
     @Column(name="longitude")
+    @JsonProperty("longitude")
     private float longitude;
     @Column(name="latitude")
+    @JsonProperty("latitude")
     private float latitude;
     @Column(name="rentalPrice")
+    @JsonProperty("rentalPrice")
     private float rentalPrice;
     @Column(name="salePrice")
+    @JsonProperty("salePrice")
     private float salePrice;
+    @Column(name="isGolden")
+    @JsonProperty("isGolden")
+    private boolean isGolden;
 
     // Constructor vacío (necesario para JPA)
     public Local() {
