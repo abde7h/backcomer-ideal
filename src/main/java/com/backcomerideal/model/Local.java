@@ -9,146 +9,135 @@ import jakarta.persistence.Id;
 @Entity
 public class Local {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idLocal;
-    private String nombreLocal;
-    private int idDistrito;
-    private String nomDistrito;
-    private int idBarri;
-    private String nomBarri;
-    private boolean disponibilidad;
-    private String tipoActividad;
-    private int numeroTiendasPorDistrito;
-    private float longitud;
-    private float latitud;
-    private float precioAlquilerMes;
-    private float precioVenta;
+    private String localId;
+    private String localName;
+    private String address;
+    private int districtId;
+    private String district;
+    private boolean isAvailability;
+    private String activityType;
+    private int totalDistrictStore;
+    private float longitude;
+    private float latitude;
+    private float rentalPrice;
+    private float salePrice;
 
     // Constructor vacío (necesario para JPA)
     public Local() {
     }
 
     // Constructor con todos los campos
-    public Local(int idLocal, String nombreLocal, int idDistrito, String nomDistrito, int idBarri, String nomBarri,
-                 boolean disponibilidad, String tipoActividad, int numeroTiendasPorDistrito, float longitud,
-                 float latitud, float precioAlquilerMes, float precioVenta) {
-        this.idLocal = idLocal;
-        this.nombreLocal = nombreLocal;
-        this.idDistrito = idDistrito;
-        this.nomDistrito = nomDistrito;
-        this.idBarri = idBarri;
-        this.nomBarri = nomBarri;
-        this.disponibilidad = disponibilidad;
-        this.tipoActividad = tipoActividad;
-        this.numeroTiendasPorDistrito = numeroTiendasPorDistrito;
-        this.longitud = longitud;
-        this.latitud = latitud;
-        this.precioAlquilerMes = precioAlquilerMes;
-        this.precioVenta = precioVenta;
+    public Local(String localId, String localName, String address, int districtId, String district,
+                 boolean isAvailability, String activityType, int totalDistrictStore, float longitude,
+                 float latitude, float rentalPrice, float salePrice) {
+        this.localId = localId;
+        this.localName = localName;
+        this.address = address;
+        this.districtId = districtId;
+        this.district = district;
+        this.isAvailability = isAvailability;
+        this.activityType = activityType;
+        this.totalDistrictStore = totalDistrictStore;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.rentalPrice = rentalPrice;
+        this.salePrice = salePrice;
     }
 
     // Getters y setters para cada campo
-    public int getIdLocal() {
-        return idLocal;
+    public String getLocalId() {
+        return localId;
     }
 
-    public void setIdLocal(int idLocal) {
-        this.idLocal = idLocal;
+    public void setLocalId(String localId) {
+        this.localId = localId;
     }
 
-    public String getNombreLocal() {
-        return nombreLocal;
+    public String getLocalName() {
+        return localName;
     }
 
-    public void setNombreLocal(String nombreLocal) {
-        this.nombreLocal = nombreLocal;
+    public void setLocalName(String localName) {
+        this.localName = localName;
     }
 
-    public int getIdDistrito() {
-        return idDistrito;
+    public String getAddress() {
+        return address;
     }
 
-    public void setIdDistrito(int idDistrito) {
-        this.idDistrito = idDistrito;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getNomDistrito() {
-        return nomDistrito;
+    public int getDistrictId() {
+        return districtId;
     }
 
-    public void setNomDistrito(String nomDistrito) {
-        this.nomDistrito = nomDistrito;
+    public void setDistrictId(int districtId) {
+        this.districtId = districtId;
     }
 
-    public int getIdBarri() {
-        return idBarri;
+    public String getDistrict() {
+        return district;
     }
 
-    public void setIdBarri(int idBarri) {
-        this.idBarri = idBarri;
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
-    public String getNomBarri() {
-        return nomBarri;
+    public boolean isAvailability() {
+        return isAvailability;
     }
 
-    public void setNomBarri(String nomBarri) {
-        this.nomBarri = nomBarri;
+    public void setAvailability(boolean availability) {
+        isAvailability = availability;
     }
 
-    public boolean isDisponibilidad() {
-        return disponibilidad;
+    public String getActivityType() {
+        return activityType;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setActivityType(String activityType) {
+        this.activityType = activityType;
     }
 
-    public String getTipoActividad() {
-        return tipoActividad;
+    public int getTotalDistrictStore() {
+        return totalDistrictStore;
     }
 
-    public void setTipoActividad(String tipoActividad) {
-        this.tipoActividad = tipoActividad;
+    public void setTotalDistrictStore(int totalDistrictStore) {
+        this.totalDistrictStore = totalDistrictStore;
     }
 
-    public int getNumeroTiendasPorDistrito() {
-        return numeroTiendasPorDistrito;
+    public float getLongitude() {
+        return longitude;
     }
 
-    public void setNumeroTiendasPorDistrito(int numeroTiendasPorDistrito) {
-        this.numeroTiendasPorDistrito = numeroTiendasPorDistrito;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
-    public float getLongitud() {
-        return longitud;
+    public float getLatitude() {
+        return latitude;
     }
 
-    public void setLongitud(float longitud) {
-        this.longitud = longitud;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
     }
 
-    public float getLatitud() {
-        return latitud;
+    public float getRentalPrice() {
+        return rentalPrice;
     }
 
-    public void setLatitud(float latitud) {
-        this.latitud = latitud;
+    public void setRentalPrice(float rentalPrice) {
+        this.rentalPrice = rentalPrice;
     }
 
-    public float getPrecioAlquilerMes() {
-        return precioAlquilerMes;
+    public float getSalePrice() {
+        return salePrice;
     }
 
-    public void setPrecioAlquilerMes(float precioAlquilerMes) {
-        this.precioAlquilerMes = precioAlquilerMes;
-    }
-
-    public float getPrecioVenta() {
-        return precioVenta;
-    }
-
-    public void setPrecioVenta(float precioVenta) {
-        this.precioVenta = precioVenta;
+    public void setSalePrice(float salePrice) {
+        this.salePrice = salePrice;
     }
 }
